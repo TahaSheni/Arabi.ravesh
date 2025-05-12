@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جدول امتیازات</title>
+
+    <!-- فونت‌های مورد نیاز -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/iran-yekan-font@v1.0.0/dist/font-face.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/b-koodak-font@v1.0.0/dist/font-face.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/lalezar-font@v1.0.0/dist/font-face.css"
+    />
+
+    <!-- استایل‌های لیدربورد -->
+    <link rel="stylesheet" href="/css/leaderboard.css" />
+  </head>
+  <body>
+    <!-- پس‌زمینه گرادیانت -->
+    <div class="gradient"></div>
+
+    <div class="leaderboard-container">
+      <div class="header">
+        <h1>جدول امتیازات</h1>
+        <p>برترین بازیکنان</p>
+      </div>
+
+      <div class="filters">
+        <select
+          id="difficultyFilter"
+          class="filter-select"
+          title="انتخاب سطح سختی"
+        >
+          <option value="easy">آسان</option>
+          <option value="hard">سخت</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>رتبه</th>
+              <th>نام</th>
+              <th>نام مدرسه</th>
+              <th>امتیاز</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody">
+            <!-- Data will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+        <div class="no-scores" style="display: none">
+          هنوز امتیازی ثبت نشده است
+        </div>
+      </div>
+
+      <a href="home" class="back-button">بازگشت به بازی</a>
+      <button id="clearLeaderboard" class="clear-button">
+        پاک کردن تمام امتیازات
+      </button>
+    </div>
+
+    <!-- پنجره مودال ورود رمز عبور -->
+    <div id="passwordModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>ورود رمز عبور</h2>
+        </div>
+        <div class="modal-body">
+          <p>لطفاً رمز عبور را وارد کنید:</p>
+          <input
+            type="password"
+            id="passwordInput"
+            class="modal-input"
+            placeholder="رمز عبور را وارد کنید"
+          />
+        </div>
+        <div class="modal-footer">
+          <button id="submitPassword" class="modal-button confirm">
+            تأیید
+          </button>
+          <button id="cancelPassword" class="modal-button cancel">لغو</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- پنجره مودال تأیید -->
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>تأیید عملیات</h2>
+        </div>
+        <div class="modal-body">
+          <p>آیا مطمئن هستید که می‌خواهید تمام امتیازات را پاک کنید؟</p>
+        </div>
+        <div class="modal-footer">
+          <button id="confirmYes" class="modal-button confirm">بله</button>
+          <button id="confirmNo" class="modal-button cancel">خیر</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- پنجره مودال پیام -->
+    <div id="messageModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="messageTitle">پیام</h2>
+        </div>
+        <div class="modal-body">
+          <p id="messageText"></p>
+        </div>
+        <div class="modal-footer">
+          <button id="messageOk" class="modal-button confirm">تأیید</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- اسکریپت لیدربورد -->
+    <script src="/js/leaderboard.js"></script>
+  </body>
+</html>
